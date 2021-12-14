@@ -1,22 +1,21 @@
-import { Component } from '@angular/core';
-import { DogService, BreedModel } from './services/dog/dog.service';
+import { Component, OnInit } from '@angular/core';
+import { CartBreed, CartService } from './services/cart/cart.service';
+import { BreedModel } from './services/dog/dog.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'catalog-angular-app';
-  breeds: BreedModel[] = [];
+export class AppComponent implements OnInit {
+  cartCounter = 0;
 
-  constructor(private dogService: DogService) {}
+  constructor(private cartService: CartService) {}
 
-  onClick() {
-    this.dogService.getBreeds()
-    .subscribe((breeds: BreedModel[]) => {
-      console.log("Breeds", breeds);
-      this.breeds = breeds;
+  ngOnInit() {
+    this.cartService.getBreedsInCart()
+    .subscribe((breedsInCart: CartBreed[]) => {
+      this.cartCounter = breedsInCart.reduce((prev, breed) => prev + breed.quantity, 0);
     });
   }
 }

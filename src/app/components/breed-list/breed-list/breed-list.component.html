@@ -1,0 +1,30 @@
+<div>
+    <div id="search">
+        <input [(ngModel)]="searchText" (keydown.enter)="onSearch()">
+        <button (click)="onSearch()" >Search</button>
+      </div>
+      
+      <div *ngIf="breedsObs | async as breeds" id="breed-list">
+        <ng-container *ngFor="let breed of breeds">
+          <div class="breed">
+            <h3>{{ breed.name }}</h3>
+            <img [src]="breed.image" [alt]="breed.name" width="200px">
+            <div class="purchase-actions">
+              <button class="add-btn" (click)="onAddBreed(breed)">Add to cart</button>
+            </div>
+            <p *ngIf="breed.bredFor.length > 0" class="characteristic">
+              <span>Bred for: </span>{{ breed.bredFor }}</p>
+            <p *ngIf="breed.breedGroup.length > 0" class="characteristic">
+              <span>Breed group: </span>{{ breed.breedGroup }}</p>
+            <p *ngIf="breed.origin.length > 0" class="characteristic">
+              <span>Origin: </span>{{ breed.origin }}</p>
+            <p *ngIf="breed.temperament.length > 0" class="characteristic">
+              <span>Temperament: </span>{{ breed.temperament }}</p>
+            <p class="characteristic">
+              <span>Height: </span>{{ breed.height }}</p>
+            <p class="characteristic">
+              <span>Weight: </span>{{ breed.weight }}</p>
+          </div>
+        </ng-container>
+      </div>
+</div>

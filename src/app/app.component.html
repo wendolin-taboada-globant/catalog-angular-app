@@ -1,20 +1,11 @@
 <header>
-  <h1>Dogshop</h1>
+  <a class="logo" routerLink="/">Dogshop</a>
   <div class="account-options">
-    <button class="char-btn" (click)="onClick()">Shop</button>
+    <button class="char-btn" routerLink="/cart-list">Cart {{ this.cartCounter}}</button>
     <button class="account-profile-btn">Account</button>
   </div>
 </header>
 
-<div id="search">
-  <input type="text">
-</div>
-
-<div id="list">
-  <div *ngFor="let breed of breeds">
-    <h3>{{ breed.name }}</h3>
-    <img [src]="breed.image" [alt]="breed.name" width="200px">
-  </div>
-</div>
+<router-outlet></router-outlet>
 
 <footer></footer>

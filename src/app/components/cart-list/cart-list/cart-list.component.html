@@ -1,0 +1,33 @@
+<div>
+    <div class="cart-list-header">
+        <h1>Shopping Cart</h1>
+        <button (click)="onClear()">Clear</button>
+    </div>
+    <div *ngIf="cartSummaryObs | async as cartSummary">
+        <ng-container *ngFor="let cartItem of cartSummary.cartList">
+            <div class="cart-item">
+                <div class="img-wrapper">
+                    <img [src]="cartItem.breed.image" [alt]="cartItem.breed.name">
+                </div>
+                <div class="cart-description">
+                    <div class="cart-info">
+                        <h2>{{ cartItem.breed.name }} ({{ cartItem.quantity }})</h2>
+                        <div>{{ cartItem.total | currency }}</div>
+                    </div>
+                    <p class="characteristic">
+                        <span>Height: </span>{{ cartItem.breed.height }}</p>
+                    <p class="characteristic">
+                    <span>Weight: </span>{{ cartItem.breed.weight }}</p>
+                    <div class="cart-item-actions">
+                        <button (click)="onAdd(cartItem.breed)">Add</button>
+                        <button (click)="onRemoveOne(cartItem.breed.id)">Remove</button>
+                        <button (click)="onDelete(cartItem.breed.id)">Remove All</button>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <div class="cart-summary">
+            Total ({{ cartSummary.totalItems }}): {{ cartSummary.totalPrice | currency }}
+        </div>
+    </div>
+</div>

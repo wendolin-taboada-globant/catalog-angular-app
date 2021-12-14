@@ -1,18 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BreedListComponent } from './components/breed-list/breed-list/breed-list.component';
+import { CartListComponent } from './components/cart-list/cart-list/cart-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BreedListComponent,
+    CartListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

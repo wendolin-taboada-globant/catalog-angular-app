@@ -1,0 +1,33 @@
+.cart-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.cart-description {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.cart-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-wrapper img {
+    width: 200px;
+    height: auto;
+}
+
+.cart-summary {
+    font-size: 20px;
+    text-align: right;
+}
