@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CartBreed, CartService } from './services/cart/cart.service';
-import { BreedModel } from './services/dog/dog.service';
 
 @Component({
   selector: 'app-root',

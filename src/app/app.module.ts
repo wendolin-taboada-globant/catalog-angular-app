@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BreedListComponent } from './components/breed-list/breed-list/breed-list.component';
 import { CartListComponent } from './components/cart-list/cart-list/cart-list.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BreedListComponent,
-    CartListComponent
+    CartListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
