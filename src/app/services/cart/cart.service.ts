@@ -44,6 +44,7 @@ export class CartService {
     const breedInCart = this.breedsSelected.get(breedId);
     if(breedInCart) {
       breedInCart.quantity -= 1;
+      breedInCart.total = breedInCart.quantity * breedInCart.breed.price;
       if(breedInCart.quantity <= 0) this.breedsSelected.delete(breedId);
       this.updateCart();
     }

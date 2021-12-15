@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CartService } from '../../../services/cart/cart.service';
-import { DogService, BreedModel } from '../../../services/dog/dog.service';
+import { CartService } from '../../services/cart/cart.service';
+import { DogService, BreedModel } from '../../services/dog/dog.service';
 
 @Component({
   selector: 'breed-list',
