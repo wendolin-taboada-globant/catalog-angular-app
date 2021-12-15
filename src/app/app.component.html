@@ -2,7 +2,10 @@
   <a class="logo" routerLink="/">
     Dogshop</a>
   <div class="account-options">
-    <button class="char-btn" routerLink="/cart-list">Cart {{ this.cartCounter}}</button>
+    <button class="cart-btn" routerLink="/cart-list">
+      <img class="icon" src="./assets/cart.svg" />
+      <div *ngIf="cartCounter > 0" class="counter">{{ cartCounter }}</div>
+    </button>
   </div>
 </header>
 

@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { BreedListComponent } from './components/breed-list/breed-list.component';
 import { CartListComponent } from './components/cart-list/cart-list.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BreedListComponent,
     CartListComponent,
-    LoaderComponent
+    LoaderComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
